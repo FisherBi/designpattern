@@ -1,6 +1,7 @@
 package prototype.structcode;
 
 /**
+ * 该实例为浅复制，注意若有变量为引用类型时，要把引用对象的变量指向复制过的新对象，而不是原有的引用对象
  * Created by fisbii on 16-3-25.
  */
 public class Client {

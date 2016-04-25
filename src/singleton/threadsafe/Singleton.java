@@ -2,6 +2,7 @@ package singleton.threadsafe;
 
 /**
  * Created by fisbii on 16-4-25.
+ * 懒汉式，线程安全
  */
 public class Singleton {
 

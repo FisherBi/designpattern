@@ -1,25 +1,28 @@
 package Test;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.math.BigInteger;
 
 /**
  * Created by fisbii on 16-3-24.
  */
 public class Main {
     public static void main(String args[]){
-        File file = new File("/data/home/fisbii/dockerconf/backend/audit/key/rsa_greenback.public");
-        System.out.println(file.getAbsolutePath());
-        System.out.println(file.getName());
-        try {
-            FileOutputStream fileOutputStream = new FileOutputStream(file.getName(),true);
-            fileOutputStream.write("aaabbb".getBytes());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        renameFile("/data/home/fisbii/Documents/Fisher","1.txt","2.txt");
+    }
+
+    public static void renameFile(final String path, final String oldname, final String newname) {
+        if (!oldname.equals(newname)) {
+            File oldfile = new File(path, oldname);
+            File newfile = new File(path, newname);
+            if (!newfile.exists()) {
+                try {
+                    oldfile.renameTo(newfile);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
+
 }
